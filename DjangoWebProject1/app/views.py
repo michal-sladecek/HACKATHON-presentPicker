@@ -12,8 +12,9 @@ def home(request):
     """Renders the home page."""    
     assert isinstance(request, HttpRequest)
     darceky_na_zobrazenie = ShopItem.objects.all().order_by('?')[:12]
-    for x in darceky_na_zobrazenie:
-        print(x.product+" "+str(idToSlova(x.pk)))
+    if request.method == 'POST':
+        
+        
     return render(
         request,
         'app/darceky.html',
