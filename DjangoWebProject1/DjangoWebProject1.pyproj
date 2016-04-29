@@ -27,6 +27,9 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="app\admin.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="app\forms.py" />
     <Compile Include="app\models.py" />
     <Compile Include="app\tests.py" />
@@ -38,7 +41,17 @@
     <Compile Include="DjangoWebProject1\settings.py" />
     <Compile Include="DjangoWebProject1\urls.py" />
     <Compile Include="DjangoWebProject1\wsgi.py" />
-    <Compile Include="DjangoWebProject1\eshopy\parseXMLtoCategories.py" />
+    <Compile Include="populateDB\urls.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="populateDB\xmls\parseXMLtoCategories.py" />
+    <Compile Include="populateDB\admin.py" />
+    <Compile Include="populateDB\apps.py" />
+    <Compile Include="populateDB\migrations\__init__.py" />
+    <Compile Include="populateDB\models.py" />
+    <Compile Include="populateDB\tests.py" />
+    <Compile Include="populateDB\views.py" />
+    <Compile Include="populateDB\__init__.py" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="app\" />
@@ -51,9 +64,13 @@
     <Folder Include="app\templates\" />
     <Folder Include="app\templates\app\" />
     <Folder Include="DjangoWebProject1\" />
-    <Folder Include="DjangoWebProject1\eshopy\" />
+    <Folder Include="populateDB\xmls\" />
+    <Folder Include="populateDB\" />
+    <Folder Include="populateDB\migrations\" />
+    <Folder Include="populateDB\templates\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="populateDB\templates\index.html" />
     <Content Include="requirements.txt" />
     <Content Include="db.sqlite3" />
     <Content Include="app\static\app\content\bootstrap.css" />
@@ -84,11 +101,10 @@
     <Content Include="app\templates\app\layout.html" />
     <Content Include="app\templates\app\login.html" />
     <Content Include="app\templates\app\loginpartial.html" />
-    <Content Include="DjangoWebProject1\eshopy\detskahracka.xml" />
-    <Content Include="DjangoWebProject1\eshopy\fitnesspro.xml" />
-    <Content Include="DjangoWebProject1\eshopy\gastroset.xml" />
-    <Content Include="DjangoWebProject1\eshopy\kupma.xml" />
-    <Content Include="DjangoWebProject1\eshopy\stylezuzana.xml" />
+    <Content Include="populateDB\xmls\detskahracka.xml" />
+    <Content Include="populateDB\xmls\gastroset.xml" />
+    <Content Include="populateDB\xmls\kupma.xml" />
+    <Content Include="populateDB\xmls\stylezuzana.xml" />
   </ItemGroup>
   <ItemGroup>
     <None Include="readme.mht">
