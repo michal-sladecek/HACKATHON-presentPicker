@@ -27,11 +27,11 @@
 
             <div class="form-group">
                 <label for="age" id="ageShow">Vek: 24</label>
-                <input class="centered" type="range"  autocomplete="off" id="age" value="24" min="0" max="114" onchange="$('#ageShow')[0].innerHTML='Vek: '+this.value" oninput="$('#ageShow')[0].innerHTML='Vek: '+this.value">
+                <input class="centered" type="range"  autocomplete="off" id="age" name="age" value="24" min="0" max="114" onchange="$('#ageShow')[0].innerHTML='Vek: '+this.value" oninput="$('#ageShow')[0].innerHTML='Vek: '+this.value">
             </div>
             <div class="form-group">
                 <label for="relation">Vzťah:</label>
-                <select class="form-control centered" id="relation">
+                <select class="form-control centered" id="relation" name="relation">
                     <option>Kolega</option>
                     <option>Kolegyňa</option>
                     <option>Brat</option>
