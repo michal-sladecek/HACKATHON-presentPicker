@@ -20,7 +20,7 @@ def home(request):
         parametre.append(request.POST['relation'])
         print('Parametre'+str(parametre))
         
-        items = ShopItem.objects.order_by('?')[:300]
+        items = ShopItem.objects.order_by('?')[:100]
         itemsWithVal = []
         for x in items:
             itemsWithVal.append((getValue(x.pk,parametre),x))
