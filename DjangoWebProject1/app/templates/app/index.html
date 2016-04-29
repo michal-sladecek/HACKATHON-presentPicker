@@ -12,16 +12,16 @@
             </div>
             <div class="form-group">
                 <label class="radio-inline">
-                    <input type="radio" name="gender" value="man">Muž
+                    <input type="radio" name="gender" value="man" autocomplete="off">Muž
                 </label>
                 <label class="radio-inline">
-                    <input type="radio" name="gender" value="woman">Žena
+                    <input type="radio" name="gender" value="woman"  autocomplete="off">Žena
                 </label>
             </div>
 
             <div class="form-group">
-                <label for="age" id="ageShow">Vek:</label>
-                <input class="centered" type="range" name="points" id="age" value="24" min="0" max="114" onchange="$('#ageShow')[0].innerHTML='Vek: '+this.value" oninput="$('#ageShow')[0].innerHTML='Vek: '+this.value">
+                <label for="age" id="ageShow">Vek: 24</label>
+                <input class="centered" type="range"  autocomplete="off" id="age" value="24" min="0" max="114" onchange="$('#ageShow')[0].innerHTML='Vek: '+this.value" oninput="$('#ageShow')[0].innerHTML='Vek: '+this.value">
 
             </div>
         </div>
