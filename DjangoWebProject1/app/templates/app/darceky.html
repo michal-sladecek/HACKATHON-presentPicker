@@ -3,7 +3,6 @@
 {% block darceky %}
 <div class="row">
     {% for i in darceky %}
-    <a  href="{{ i.url }}">
         <div  data-toggle="tooltip" data-placement="auto" title="{{i.description}}" class="col-lg-4 col-sm-6 col-xs-12 centering container-fluid" style="height:600px">
 
             <h2>{{ i.product }}</h2>
@@ -12,26 +11,26 @@
             <div class="container-fluid">
                 <form role="form" action="{% url 'home' %}" id="darcekForm{{ forloop.counter0 }}" method="post">
                     {% csrf_token %}
-                    <input type="hidden" name="isGood">
+                    <input type="hidden" name="isGood" id="isGood{{ forloop.counter0 }}">
                     <input type="hidden" name="fromGender" value="{{ fromGender }}">
                     <input type="hidden" name="toGender" value="{{ toGender }}">
                     <input type="hidden" name="ageCategory" value="{{ ageCategory }}">
                     <input type="hidden" name="relation" value="{{ relation }}">
-                    <input type="hidden" name="redirectTo" value="{{ url }}">
+                    <input type="hidden" name="redirectTo" value="{{ i.pk }}">
 
-                    <button type="button" onclick="submit(0,{{ forloop.counter0 }})" class="btn btn-danger btn-block" style="position: absolute; top: 500px; width:40%; left:10%">Je to blbosť, ale chcem si to pozrieť</button>
-                    <button type="button" onclick="submit(1,{{ forloop.counter0 }})" class="btn btn-success btn-block" style="position: absolute; top: 500px; width:40%; right:10%; margin-top: 0 ">Toto ma zaujalo</button>
-
+                    <button type="button" onclick="submitForm(0,{{ forloop.counter0 }})" class="btn btn-danger btn-block" style="position: absolute; top: 500px; width:40%; left:10%">Je to blbosť, ale chcem si to pozrieť</button>
+                    <button type="button" onclick="submitForm(1,{{ forloop.counter0 }})" class="btn btn-success btn-block" style="position: absolute; top: 500px; width:40%; right:10%; margin-top: 0 ">Toto ma zaujalo</button>
+                </form>
             </div>
         </div>
-    </a>
 {% endfor %}
 </div>
 <script>
 $(document).ready(function(){
     $('[data-toggle="tooltip"]').tooltip();
 });
-    function submit(isGood,formId){
+    function submitForm(isGood,formId){
+
         $("#isGood"+formId)[0].value=isGood;
         $("#darcekForm"+formId)[0].submit();
     }
