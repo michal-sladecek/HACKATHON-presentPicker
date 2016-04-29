@@ -13,12 +13,12 @@ def home(request):
     assert isinstance(request, HttpRequest)
     darceky_na_zobrazenie = ShopItem.objects.all().order_by('?')[:12]
     for x in darceky_na_zobrazenie:
-        print(idToSlova(x.pk))
+        print(x.product+" "+str(idToSlova(x.pk)))
     return render(
         request,
         'app/darceky.html',
         {
-            'title':'Vyborne',
+            'title':'Appka na darčeky',
             'year':datetime.now().year,
             'darceky': darceky_na_zobrazenie,
         }
