@@ -7,24 +7,7 @@
     <p class="lead">Služba Pre Zúfalcov</p>
     <form role="form" class="centering" method="post" action="{% url 'home' %}">
         {% csrf_token %}
-        <div class="container-fluid" ng-app="my_app">
-            <div class="form-group">Som:
-                <label class="radio-inline">
-                    <input type="radio" name="fromGender" value="fromMan" autocomplete="off">Muž
-                </label>
-                <label class="radio-inline">
-                    <input type="radio" name="fromGender" value="fromWoman"  autocomplete="off">Žena
-                </label>
-            </div>
-            <div class="form-group">Kupujem:
-                <label class="radio-inline">
-                    <input type="radio" name="toGender" value="toMan" autocomplete="off">Mužovi
-                </label>
-                <label class="radio-inline">
-                    <input type="radio" name="toGender" value="toWoman"  autocomplete="off">Žene
-                </label>
-            </div>
-
+        <div class="container-fluid centering">
             <div class="form-group">
                 <label for="age" id="ageShow">Vek: 24</label>
                 <input class="centered" type="range"  autocomplete="off" id="age" value="24" min="0" max="114" onchange="makeAge(this)" oninput="makeAge(this)">
@@ -32,7 +15,7 @@
             <input type="hidden" id="ageCategory" name="ageCategory">
 
             <div class="form-group">
-                <label for="relation">Vzťah:</label>
+                <label for="relation">Je to môj:</label>
                 <select class="form-control centered" id="relation" name="relation">
                     <option>Kolega</option>
                     <option>Kolegyňa</option>
@@ -44,12 +27,17 @@
                     <option>Dedo</option>
                     <option>Dcéra</option>
                     <option>Syn</option>
-                    <option>Kamarát</option>
                     <option>Kamarátka</option>
+                    <option>Kamarát</option>
+                    <option>Frajerka</option>
+                    <option>Frajer</option>
+                    <option>Manželka</option>
+                    <option>Manžel</option>
+
                 </select>
             </div>
         </div>
-        <input type="submit">
+        <input class="btn btn-default" type="submit">
     </form>
 
     <script>
