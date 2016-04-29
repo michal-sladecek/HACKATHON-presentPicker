@@ -24,7 +24,7 @@ def home(request):
         itemsWithVal = []
         for x in items:
             itemsWithVal.append((getValue(x.pk,parametre),x))
-        itemsWithVal.sort(reverse=True)
+        itemsWithVal.sort(key=lambda tup: tup[0],reverse=True)
         darceky=[]
         for x in range(10):
             darceky.append(itemsWithVal[x][1])
