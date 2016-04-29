@@ -35,6 +35,10 @@ def home(request):
                 'title':'Appka na darčeky',
                 'year':datetime.now().year,
                 'darceky':darceky ,
+                'fromGender': parametre[0],
+                'toGender': parametre[1],
+                'ageCategory': parametre[2],
+                'relation': parametre[3],
             }
         )  
     return render(request,'app/index.html', {
