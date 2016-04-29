@@ -7,11 +7,8 @@
     <p class="lead">Služba Pre Zúfalcov</p>
     <p>Nedá sa mi vycentrovať</p>
     <form role="form" class="centering">
-        <div class="container-fluid">
+        <div class="container-fluid" ng-app="my_app">
             <div class="form-group">
-                <label>
-                    <input type="email" class="form-control" id="email" placeholder="Enter email">
-                </label>
             </div>
             <div class="form-group">
                 <label class="radio-inline">
@@ -22,9 +19,9 @@
                 </label>
             </div>
 
-            <div data-role="main" class="ui-content">
-                <label for="points">Points:</label>
-                <input type="range" name="points" id="points" value="50" min="0" max="100" data-popup-enabled="true" oninput="alert(this.value)" onchange="alert(this.value)">
+            <div class="form-group">
+                <label for="age" id="ageShow">Vek:</label>
+                <input class="centered" type="range" name="points" id="age" value="24" min="0" max="114" onchange="$('#ageShow')[0].innerHTML='Vek: '+this.value" oninput="$('#ageShow')[0].innerHTML='Vek: '+this.value">
 
             </div>
         </div>

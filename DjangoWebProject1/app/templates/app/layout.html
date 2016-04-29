@@ -13,10 +13,16 @@
     <script src="{% static 'app/scripts/bootstrap.min.js' %}"></script>
     <script src="{% static 'app/scripts/respond.js' %}"></script>
     <script src="{% static 'app/scripts/bootstrap-slider.js' %}"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 
 </head>
 
-
+<script>
+    var my_app = angular.module('MyApp').config(function($interpolateProvider) {
+    $interpolateProvider.startSymbol('{$');
+    $interpolateProvider.endSymbol('$}');
+});
+</script>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container-fluid">

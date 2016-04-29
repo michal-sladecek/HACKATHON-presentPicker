@@ -43,3 +43,8 @@ input[type="checkbox"].input-validation-error {
 .centering {
   text-align: center;
 }
+
+.centered {
+    margin: 0 auto;
+    display: block;
+}
