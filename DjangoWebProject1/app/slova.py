@@ -29,10 +29,10 @@ def feedback(id, params, val):
         for parameter in params:
             for word in words:
                 dict[parameter][word]+=1
-    if val==-1:
+    if val==0:
         for parameter in params:
             for word in words:
-                dict[parameter][word]-=1 
+                dict[parameter][word]-=5
     with open(os.path.join(os.path.dirname(os.path.realpath(__file__)),'skupinySlova.pickle'),'wb') as f:
         pickle.dump(dict,f)          
         

@@ -3,7 +3,7 @@ Definition of views.
 """
 
 from django.shortcuts import render
-from django.http import HttpRequest
+from django.http import HttpRequest,HttpResponseRedirect
 from django.template import RequestContext
 from datetime import datetime
 from .models import ShopItem
@@ -13,13 +13,17 @@ def home(request):
     assert isinstance(request, HttpRequest)
     if request.method == 'POST':
         print(request.POST)
+        
+            
         parametre = []
         parametre.append(request.POST['fromGender'])
         parametre.append(request.POST['toGender'])
         parametre.append(request.POST['ageCategory'])
         parametre.append(request.POST['relation'])
         print('Parametre'+str(parametre))
-        
+        if 'isGood' in request.POST:
+            feedback(request.POST['primaryKey'],parametre,request.POST['isGood'])
+            HttpResponseRedirect(ShopItem.objects.get(pk==request.POST['primaryKey']).url)
         items = ShopItem.objects.order_by('?')[:100]
         itemsWithVal = []
         for x in items:
