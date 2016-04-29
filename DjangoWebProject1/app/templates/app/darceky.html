@@ -16,7 +16,7 @@
                     <input type="hidden" name="toGender" value="{{ toGender }}">
                     <input type="hidden" name="ageCategory" value="{{ ageCategory }}">
                     <input type="hidden" name="relation" value="{{ relation }}">
-                    <input type="hidden" name="redirectTo" value="{{ i.pk }}">
+                    <input type="hidden" name="primaryKey" value="{{ i.pk }}">
 
                     <button type="button" onclick="submitForm(0,{{ forloop.counter0 }})" class="btn btn-danger btn-block" style="position: absolute; top: 500px; width:40%; left:10%">Je to blbosť, ale chcem si to pozrieť</button>
                     <button type="button" onclick="submitForm(1,{{ forloop.counter0 }})" class="btn btn-success btn-block" style="position: absolute; top: 500px; width:40%; right:10%; margin-top: 0 ">Toto ma zaujalo</button>
