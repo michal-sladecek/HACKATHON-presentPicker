@@ -12,8 +12,6 @@
                 <form role="form" action="{% url 'home' %}" id="darcekForm{{ forloop.counter0 }}" method="post">
                     {% csrf_token %}
                     <input type="hidden" name="isGood" id="isGood{{ forloop.counter0 }}">
-                    <input type="hidden" name="fromGender" value="{{ fromGender }}">
-                    <input type="hidden" name="toGender" value="{{ toGender }}">
                     <input type="hidden" name="ageCategory" value="{{ ageCategory }}">
                     <input type="hidden" name="relation" value="{{ relation }}">
                     <input type="hidden" name="primaryKey" value="{{ i.pk }}">
