@@ -10,8 +10,16 @@
             <img class="img-rounded" style="max-width:100%; max-height:50%" src="{{ i.imgurl }}">
             <h3>{{ i.price_vat }} €</h3>
             <div class="container-fluid">
-                <button type="button" class="btn btn-danger btn-block" style="position: absolute; top: 500px; width:40%; left:10%">Je to blbosť, ale chcem si to pozrieť</button>
-                <button type="button" class="btn btn-success btn-block" style="position: absolute; top: 500px; width:40%; right:10%; margin-top: 0 ">Toto ma zaujalo</button>
+                <form role="form" action="{% url 'home' %}" id="darcekForm" method="post">
+                    {% csrf_token %}
+                    <input type="hidden" name="isGood">
+                    <input type="hidden" name="fromGender" value="{{ fromGender }}">
+                    <input type="hidden" name="toGender" value="{{ toGender }}">
+                    <input type="hidden" name="ageCategory" value="{{ ageCategory }}">
+                    <input type="hidden" name="relation" value="{{ relation }}">
+                    <button type="button" onclick="submit(0)" class="btn btn-danger btn-block" style="position: absolute; top: 500px; width:40%; left:10%">Je to blbosť, ale chcem si to pozrieť</button>
+                    <button type="button" onclick="submit(1)" class="btn btn-success btn-block" style="position: absolute; top: 500px; width:40%; right:10%; margin-top: 0 ">Toto ma zaujalo</button>
+
             </div>
         </div>
     </a>
@@ -21,5 +29,9 @@
 $(document).ready(function(){
     $('[data-toggle="tooltip"]').tooltip();
 });
+    function submit(isGood){
+        $("#isGood")[0].value=isGood;
+        $("#darcekForm")[0].submit();
+    }
 </script>
 {% endblock %}
