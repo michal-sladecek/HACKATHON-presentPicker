@@ -45,6 +45,6 @@ urlpatterns = [
 
     # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^darceky/',app.views.darceky),
+    url(r'^darceky/',app.views.darceky,name='darceky'),
     url(r'populate_database/',populateDB.views.populateView),
 ]
