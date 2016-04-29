@@ -10,12 +10,14 @@ from .models import ShopItem
 def home(request):
     """Renders the home page."""
     assert isinstance(request, HttpRequest)
+    darceky_na_zobrazenie = ShopItem.objects.all().order_by('?')[:10]
     return render(
         request,
-        'app/index.html',
+        'app/darceky.html',
         {
-            'title':'Home Page',
+            'title':'Vyborne',
             'year':datetime.now().year,
+            'darceky': darceky_na_zobrazenie,
         }
     )
 
@@ -47,5 +49,4 @@ def about(request):
 
 def darceky(request):
     assert isinstance(request,HttpRequest)
-    darceky_na_zobrazenie = ShopItem.objects.all().order_by('?')[:10]
-    return render(request,'app/darceky.html',{'darceky': darceky_na_zobrazenie})
+
