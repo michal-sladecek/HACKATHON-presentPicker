@@ -6,7 +6,7 @@ from django.shortcuts import render
 from django.http import HttpRequest
 from django.template import RequestContext
 from datetime import datetime
-
+from .models import ShopItem
 def home(request):
     """Renders the home page."""
     assert isinstance(request, HttpRequest)
@@ -47,4 +47,5 @@ def about(request):
 
 def darceky(request):
     assert isinstance(request,HttpRequest)
-   # darceky_na_zobrazenie = 
+    darceky_na_zobrazenie = ShopItem.objects.all().order_by('?')[:10]
+    return render(request,'app/darceky.html',{'darceky': darceky_na_zobrazenie})
