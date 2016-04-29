@@ -44,3 +44,7 @@ def about(request):
             'year':datetime.now().year,
         }
     )
+
+def darceky(request):
+    assert isinstance(request,HttpRequest)
+   # darceky_na_zobrazenie = 
