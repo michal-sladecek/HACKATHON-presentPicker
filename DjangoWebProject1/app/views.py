@@ -11,19 +11,36 @@ from .slova import *
 def home(request):
     """Renders the home page."""    
     assert isinstance(request, HttpRequest)
-    darceky_na_zobrazenie = ShopItem.objects.all().order_by('?')[:12]
     if request.method == 'POST':
+        parametre = []
+        parametre.append(request.POST['fromGender'])
+        parametre.append(request.POST['toGender'])
+        parametre.append(request.POST['ageCategory'])
+        parametre.append(request.POST['relation'])
+        print('Parametre'+parametre)
         
-        
-    return render(
-        request,
-        'app/darceky.html',
-        {
-            'title':'Appka na darčeky',
-            'year':datetime.now().year,
-            'darceky': darceky_na_zobrazenie,
-        }
-    )
+        items = ShopItem.objects.all()
+        itemsWithVal = []
+        for x in items:
+            itemsWithVal.append((getValue(x.pk,parametre),x))
+        sort(itemsWithVal,reversed=True)
+        darceky=[]
+        for x in range(10):
+            darceky.append(itemsWithVal[x][1])
+        return render(
+            request,
+            'app/darceky.html',
+            {
+                'title':'Appka na darčeky',
+                'year':datetime.now().year,
+                'darceky':darceky ,
+            }
+        )  
+    return render(request,'app/index.html', {
+                'title':'Appka na darčeky',
+                'year':datetime.now().year,
+            }
+        ) 
 
 def contact(request):
     """Renders the contact page."""
