@@ -20,7 +20,21 @@ def getValue(id, params):
         for word in words:
             value += dict[parameter][word]
     return value
-            
+
+def feedback(id, params, val):
+    with open(os.path.join(os.path.dirname(os.path.realpath(__file__)),'skupinySlova.pickle'),'rb') as f:
+        dict = pickle.load(f)
+    words = idToSlova(id) 
+    if val==1:
+        for parameter in params:
+            for word in words:
+                dict[parameter][word]+=1
+    if val==-1:
+        for parameter in params:
+            for word in words:
+                dict[parameter][word]-=1 
+    with open(os.path.join(os.path.dirname(os.path.realpath(__file__)),'skupinySlova.pickle'),'wb') as f:
+        pickle.dump(dict,f)          
         
     
  
