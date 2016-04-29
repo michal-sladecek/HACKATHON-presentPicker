@@ -17,7 +17,7 @@ def home(request):
         parametre.append(request.POST['toGender'])
         parametre.append(request.POST['ageCategory'])
         parametre.append(request.POST['relation'])
-        print('Parametre'+parametre)
+        print('Parametre'+str(parametre))
         
         items = ShopItem.objects.all()
         itemsWithVal = []
