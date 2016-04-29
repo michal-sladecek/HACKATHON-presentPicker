@@ -20,11 +20,11 @@ def home(request):
         parametre.append(request.POST['relation'])
         print('Parametre'+str(parametre))
         
-        items = ShopItem.objects.all()
+        items = ShopItem.objects.order_by('?')[:10]
         itemsWithVal = []
         for x in items:
             itemsWithVal.append((getValue(x.pk,parametre),x))
-        sort(itemsWithVal,reversed=True)
+        itemsWithVal.sort(reverse=True)
         darceky=[]
         for x in range(10):
             darceky.append(itemsWithVal[x][1])
