@@ -5,7 +5,8 @@
 <div class="jumbotron centering">
     <h1>Tip Na Darček</h1>
     <p class="lead">Služba Pre Zúfalcov</p>
-    <form role="form" class="centering">
+    <form role="form" class="centering" method="post" action="{% url 'home' %}">
+        {% csrf_token %}
         <div class="container-fluid" ng-app="my_app">
             <div class="form-group">Som:
                 <label class="radio-inline">
@@ -46,6 +47,7 @@
                 </select>
             </div>
         </div>
+        <input type="submit">
     </form>
 </div>
 
