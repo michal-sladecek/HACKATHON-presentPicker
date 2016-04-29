@@ -5,24 +5,45 @@
 <div class="jumbotron centering">
     <h1>Tip Na Darček</h1>
     <p class="lead">Služba Pre Zúfalcov</p>
-    <p>Nedá sa mi vycentrovať</p>
     <form role="form" class="centering">
         <div class="container-fluid" ng-app="my_app">
-            <div class="form-group">
-            </div>
-            <div class="form-group">
+            <div class="form-group">Som:
                 <label class="radio-inline">
-                    <input type="radio" name="gender" value="man" autocomplete="off">Muž
+                    <input type="radio" name="fromGender" value="man" autocomplete="off">Muž
                 </label>
                 <label class="radio-inline">
-                    <input type="radio" name="gender" value="woman"  autocomplete="off">Žena
+                    <input type="radio" name="fromGender" value="woman"  autocomplete="off">Žena
+                </label>
+            </div>
+            <div class="form-group">Kupujem:
+                <label class="radio-inline">
+                    <input type="radio" name="toGender" value="man" autocomplete="off">Mužovi
+                </label>
+                <label class="radio-inline">
+                    <input type="radio" name="toGender" value="woman"  autocomplete="off">Žene
                 </label>
             </div>
 
             <div class="form-group">
                 <label for="age" id="ageShow">Vek: 24</label>
                 <input class="centered" type="range"  autocomplete="off" id="age" value="24" min="0" max="114" onchange="$('#ageShow')[0].innerHTML='Vek: '+this.value" oninput="$('#ageShow')[0].innerHTML='Vek: '+this.value">
-
+            </div>
+            <div class="form-group">
+                <label for="relation">Vzťah:</label>
+                <select class="form-control centered" id="relation">
+                    <option>Kolega</option>
+                    <option>Kolegyňa</option>
+                    <option>Brat</option>
+                    <option>Sestra</option>
+                    <option>Otec</option>
+                    <option>Mama</option>
+                    <option>Babka</option>
+                    <option>Dedo</option>
+                    <option>Dcéra</option>
+                    <option>Syn</option>
+                    <option>Kamarát</option>
+                    <option>Kamarátka</option>
+                </select>
             </div>
         </div>
     </form>
