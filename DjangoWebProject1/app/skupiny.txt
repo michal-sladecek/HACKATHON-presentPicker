@@ -20,7 +20,7 @@ Dcéra
 Syn
 Kamarát
 Kamarátka
-fromMan
-fromWoman
-toMan
-toWoman
+Manžel
+Manželka
+Frajerka
+Frajer
