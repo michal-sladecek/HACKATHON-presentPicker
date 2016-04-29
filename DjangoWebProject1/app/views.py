@@ -8,7 +8,7 @@ from django.template import RequestContext
 from datetime import datetime
 from .models import ShopItem
 def home(request):
-    """Renders the home page."""    `
+    """Renders the home page."""
     assert isinstance(request, HttpRequest)
     darceky_na_zobrazenie = ShopItem.objects.all().order_by('?')[:12]
     return render(
