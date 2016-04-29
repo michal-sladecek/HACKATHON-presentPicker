@@ -38,6 +38,7 @@
     <Compile Include="DjangoWebProject1\settings.py" />
     <Compile Include="DjangoWebProject1\urls.py" />
     <Compile Include="DjangoWebProject1\wsgi.py" />
+    <Compile Include="DjangoWebProject1\eshopy\parseXMLtoCategories.py" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="app\" />
@@ -50,6 +51,7 @@
     <Folder Include="app\templates\" />
     <Folder Include="app\templates\app\" />
     <Folder Include="DjangoWebProject1\" />
+    <Folder Include="DjangoWebProject1\eshopy\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="requirements.txt" />
@@ -82,6 +84,11 @@
     <Content Include="app\templates\app\layout.html" />
     <Content Include="app\templates\app\login.html" />
     <Content Include="app\templates\app\loginpartial.html" />
+    <Content Include="DjangoWebProject1\eshopy\detskahracka.xml" />
+    <Content Include="DjangoWebProject1\eshopy\fitnesspro.xml" />
+    <Content Include="DjangoWebProject1\eshopy\gastroset.xml" />
+    <Content Include="DjangoWebProject1\eshopy\kupma.xml" />
+    <Content Include="DjangoWebProject1\eshopy\stylezuzana.xml" />
   </ItemGroup>
   <ItemGroup>
     <None Include="readme.mht">
