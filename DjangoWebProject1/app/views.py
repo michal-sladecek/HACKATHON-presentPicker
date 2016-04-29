@@ -12,6 +12,7 @@ def home(request):
     """Renders the home page."""    
     assert isinstance(request, HttpRequest)
     if request.method == 'POST':
+        print(request.POST)
         parametre = []
         parametre.append(request.POST['fromGender'])
         parametre.append(request.POST['toGender'])
