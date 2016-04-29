@@ -16,15 +16,13 @@ def home(request):
         
             
         parametre = []
-        parametre.append(request.POST['fromGender'])
-        parametre.append(request.POST['toGender'])
         parametre.append(request.POST['ageCategory'])
         parametre.append(request.POST['relation'])
         print('Parametre'+str(parametre))
         if 'isGood' in request.POST:
             feedback(request.POST['primaryKey'],parametre,request.POST['isGood'])
-            HttpResponseRedirect(ShopItem.objects.get(pk=request.POST['primaryKey']).url)
-        items = ShopItem.objects.order_by('?')[:100]
+            return HttpResponseRedirect(str(ShopItem.objects.get(pk=request.POST['primaryKey']).url))
+        items = ShopItem.objects.order_by('?')[:50]
         itemsWithVal = []
         for x in items:
             itemsWithVal.append((getValue(x.pk,parametre),x))
@@ -39,8 +37,6 @@ def home(request):
                 'title':'Appka na darčeky',
                 'year':datetime.now().year,
                 'darceky':darceky ,
-                'fromGender': parametre[0],
-                'toGender': parametre[1],
                 'ageCategory': parametre[2],
                 'relation': parametre[3],
             }
