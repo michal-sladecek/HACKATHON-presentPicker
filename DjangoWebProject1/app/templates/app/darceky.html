@@ -1,7 +1,13 @@
 {% extends "app/index.html" %}
 
 {% block darceky %}
-
-koberec
-
+<div class="row">
+{% for i in darceky %}
+    <div class="col-lg-4 col-sm-6 col-xs-12 centering">
+    <h2>{{ i.product }}</h2>
+    <img style="max-width:100%; max-height: 100%" src="{{ i.imgurl }}">
+    <p>{{ i.description }}</p>
+    </div>
+{% endfor %}
+</div>
 {% endblock %}
