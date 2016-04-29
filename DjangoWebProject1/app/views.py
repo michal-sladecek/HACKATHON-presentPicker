@@ -23,7 +23,7 @@ def home(request):
         print('Parametre'+str(parametre))
         if 'isGood' in request.POST:
             feedback(request.POST['primaryKey'],parametre,request.POST['isGood'])
-            HttpResponseRedirect(ShopItem.objects.get(pk==request.POST['primaryKey']).url)
+            HttpResponseRedirect(ShopItem.objects.get(pk=request.POST['primaryKey']).url)
         items = ShopItem.objects.order_by('?')[:100]
         itemsWithVal = []
         for x in items:
