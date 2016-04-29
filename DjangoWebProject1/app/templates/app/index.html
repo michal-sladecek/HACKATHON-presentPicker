@@ -2,14 +2,37 @@
 
 {% block content %}
 
-<div class="jumbotron">
+<div class="jumbotron centering">
     <h1>Tip Na Darček</h1>
-    <p class="lead">Služba pre zúfalcov</p>
-    <p><a href="https://www.djangoproject.com/" class="btn btn-primary btn-large">Learn more &raquo;</a></p>
+    <p class="lead">Služba Pre Zúfalcov</p>
+    <p>Nedá sa mi vycentrovať</p>
+    <form role="form" class="centering">
+        <div class="container-fluid">
+            <div class="form-group">
+                <label>
+                    <input type="email" class="form-control" id="email" placeholder="Enter email">
+                </label>
+            </div>
+            <div class="form-group">
+                <label class="radio-inline">
+                    <input type="radio" name="gender" value="man">Muž
+                </label>
+                <label class="radio-inline">
+                    <input type="radio" name="gender" value="woman">Žena
+                </label>
+            </div>
+
+            <div data-role="main" class="ui-content">
+                <label for="points">Points:</label>
+                <input type="range" name="points" id="points" value="50" min="0" max="100" data-popup-enabled="true" oninput="alert(this.value)" onchange="alert(this.value)">
+
+            </div>
+        </div>
+    </form>
 </div>
 
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-lg-4 col-sm-6 col-xs-12">
         <h2>Getting started</h2>
         <p>
             Django gives you a powerful, patterns-based way to build dynamic websites that
@@ -18,12 +41,12 @@
         </p>
         <p><a class="btn btn-default" href="http://www.djangobook.com/en/2.0/index.html">Learn more &raquo;</a></p>
     </div>
-    <div class="col-md-4">
+    <div class="col-lg-4 col-sm-6 col-xs-12">
         <h2>Get more libraries</h2>
         <p>The Python Package Index is a repository of software for the Python programming language.</p>
         <p><a class="btn btn-default" href="https://pypi.python.org/pypi">Learn more &raquo;</a></p>
     </div>
-    <div class="col-md-4">
+    <div class="col-lg-4 col-sm-6 col-xs-12">
         <h2>Microsoft Azure</h2>
         <p>You can easily publish to Microsoft Azure using Python Tools for Visual Studio. Find out how you can host your application using a free trial today.</p>
         <p><a class="btn btn-default" href="http://azure.microsoft.com">Learn more &raquo;</a></p>
