@@ -27,7 +27,7 @@
 
             <div class="form-group">
                 <label for="age" id="ageShow">Vek: 24</label>
-                <input class="centered" type="range"  autocomplete="off" id="age" name="age" value="24" min="0" max="114" onchange="makeAge(this)" oninput="makeAge(this)">
+                <input class="centered" type="range"  autocomplete="off" id="age" value="24" min="0" max="114" onchange="makeAge(this)" oninput="makeAge(this)">
             </div>
             <input type="hidden" id="ageCategory" name="ageCategory">
 
@@ -66,7 +66,7 @@
             else if(element.value<=60) returning=7;
             else if(element.value<=80) returning=8;
             else returning=9;
-            $('#ageCategory')[0].innerHTML=returning;
+            $('#ageCategory')[0].value=returning;
         }
     </script>
 
